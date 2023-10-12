@@ -1,0 +1,1869 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shop-Claue</title>
+    <link rel="stylesheet" href="../public/css/output.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
+    <link rel="shortcut icon" type="image/png" href="./media/img/desktop2.png" class="tab-icon">
+    <style>
+        ::-webkit-scrollbar {
+            width: 0px;
+        }
+    </style>
+</head>
+
+<body class="font-poppins ">
+    <div class="warapper relative ">
+        <!-- Search -->
+        <div id="myForm" class="fixed  bg-black bg-opacity-95 z-50 w-full h-full  hidden ">
+            <div class=" p-8 rounded-lg shadow-lg">
+                <button id="closeForm"
+                    class="absolute top-[10%] right-[5%] text-white hover:text-gray-700 hover:rotate-180 transition-all ease-in duration-200">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
+                        stroke="currentColor" class="w-10 h-10">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"></path>
+                    </svg>
+                </button>
+
+                <button class="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/3 w-1/3">
+                    <input
+                        class=" border-0 bg-transparent border-b w-full border-opacity-25 border-white p-0 text-center text-2xl text-white focus:outline-none focus:border-opacity-100 focus:border-gray-500 "
+                        type="text" name="s" placeholder="Search for..." autocomplete="off">
+
+                </button>
+
+            </div>
+        </div>
+        <!-- cart -->
+        <div class="cart bg-[rgba(0,0,0,.8)]  h-[100vh] w-[100vw] fixed z-50  hidden" id="cart_mini">
+            <div class="w-[320px]  block h-full absolute right-0 bg-white translate-x-64 transition-all ease-in-out duration-500"
+                id="cart_mini2">
+                <div class="flex w-full bg-[#222]  leading-10 text-white p-3 text-base tracking-wider">
+                    <div class="cursor-pointer px-3 hover:bg-slate-700 hover:rounded-full hover:rotate-180 transition-all ease-in duration-200 "
+                        id="close_cart"><i class="fa-solid fa-x "></i></div>
+                    <h3 class="flex justify-center items-center w-full font-bold uppercase">mini cart</h3>
+                </div>
+                <div class="p-5">
+                    <div class=" ">
+                        <ul>
+                            <li class="flex mt-3">
+                                <a href="#" class="flex text-[13px] relative">
+                                    <div
+                                        class="before:w-[70px] before:bg-[rgba(0,0,0,.5)] before:content-['X'] before:flex before:justify-center before:items-center before:text-white before:h-full before:absolute before:top-0 before:left-0 before:opacity-0 before:hover:opacity-100">
+                                        <img src="./media/img/ck-1.jpg" alt="" loading="lazy" class="w-[70px] mr-2 ">
+                                    </div>
+
+                                    <span class="block whitespace-nowrap">
+                                        <span>Calvin Klein Logo Sweatpants</span>
+                                        <span class="flex text-xs text-[#878787]">
+                                            <span>
+                                                <span>1</span>
+                                                x
+                                                <span>$35.00</span>
+                                            </span>
+                                        </span>
+                                    </span>
+                                </a>
+                            </li>
+                            <li class="flex mt-3">
+                                <a href="#" class="flex text-[13px] relative">
+                                    <div
+                                        class="before:w-[70px] before:bg-[rgba(0,0,0,.5)] before:content-['X'] before:flex before:justify-center before:items-center before:text-white before:h-full before:absolute before:top-0 before:left-0 before:opacity-0 before:hover:opacity-100">
+                                        <img src="./media/img/p2-5-300x383.jpg" alt="" loading="lazy"
+                                            class="w-[70px] mr-2 ">
+                                    </div>
+
+                                    <span class="block whitespace-nowrap">
+                                        <span>Cyan Boheme Cyan</span>
+                                        <span class="flex text-xs text-[#878787]">
+                                            <span>
+                                                <span>1</span>
+                                                x
+                                                <span>$45.00</span>
+                                            </span>
+                                        </span>
+                                    </span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="flex justify-between items-center my-5 text-lg">
+                        <p class="font-bold">Subtotal:</p>
+                        <span>$80.00</span>
+                    </div>
+                    <div class="flex justify-center items-center w-full">
+                        <div class="w-full text-white text-sm">
+                            <a href="../public/viewCart.html">
+                                <p
+                                    class="mb-3 bg-[#222]  rounded-full flex justify-center items-center py-2 uppercase font-normal hover:bg-[#56cfe1]">
+                                    view cart</p>
+                            </a>
+                            <a href="../public/CheckOut.html">
+                                <p
+                                    class="mb-3 bg-[#222] rounded-full flex justify-center items-center py-2 uppercase font-normal hover:bg-[#56cfe1]">
+                                    checkout</p>
+                            </a>
+                            <a href="../public/Product.html">
+                                <p
+                                    class="bg-[#222] rounded-full flex justify-center items-center py-2 uppercase font-normal hover:bg-[#56cfe1]">
+                                    continue shopping</p>
+                            </a>
+                        </div>
+                    </div>
+
+
+                </div>
+
+            </div>
+        </div>
+        <!-- end card -->
+        <!--chi tiết sản phẩm -->
+        <div class="bg-[rgba(0,0,0,.8)] w-full h-screen transition-all ease-in-out duration-500 z-50 fixed hidden"
+            id="MotaSP">
+            <div class="flex justify-center items-center  w-full h-screen ">
+                <div class="max-w-[950px] m-auto block w-full bg-white h-[690.237px] overflow-hidden">
+                    <div class="flex w-full">
+                        <div class="img h-[690.237px] w-2/3 relative group">
+                            <button class="absolute top-1/2 left-8 border-black border rounded-full p-2 px-3.5 w-[38px] h-[38px] flex justify-center items-center opacity-0  group-hover:opacity-100 transition-all ease-out duration-300 hover:bg-[#56cfe1] hover:text-white hover:border-[#56cfe1]
+                             prev" onclick="prevSlide()"><i class="fas fa-chevron-left "></i></button>
+                            <!-- Slideshow Container -->
+                            <div class="slideshow-container max-w-[541px] m-auto">
+                                <div class="slideshow-image">
+                                    <img src="./media/img/ck-1.jpg" alt="" loading="lazy" class="w-full h-auto">
+                                </div>
+                                <div class="slideshow-image">
+                                    <img src="./media/img/ck-2.jpg" alt="" loading="lazy" class="w-full h-auto">
+                                </div>
+                                <div class="slideshow-image">
+                                    <img src="./media/img/ck-3.jpg" alt="" loading="lazy" class="w-full h-auto">
+                                </div>
+                                <div class="slideshow-image">
+                                    <img src="./media/img/ck-4.jpg" alt="" loading="lazy" class="w-full h-auto">
+                                </div>
+                            </div>
+                            <button class="absolute top-1/2 right-8 border-black border rounded-full p-2 px-3.5 w-[38px] h-[38px] flex justify-center items-center opacity-0  group-hover:opacity-100 transition-all ease-out duration-300 hover:bg-[#56cfe1] hover:text-white hover:border-[#56cfe1]
+                             next" onclick="nextSlide()"><i class="fas fa-chevron-right "></i></button>
+                            <!-- End Slideshow Container -->
+                            <!-- <ul class="flex absolute bottom-4 left-1/2 -translate-x-1/2">
+                                <li class="w-3 h-3 mr-1 rounded-full  bg-slate-500" data-index="0"></li>
+                                <li class="w-3 h-3 mr-1 rounded-full  bg-slate-500 " data-index="1"></li>
+                                <li class="w-3 h-3 mr-1 rounded-full  bg-slate-500 " data-index="2"></li>
+                                <li class="w-3 h-3 mr-1 rounded-full  bg-slate-500 " data-index="3"></li>
+                                <li class="w-3 h-3 mr-1 rounded-full  bg-slate-500 " data-index="4"></li>
+                            </ul> -->
+                        </div>
+                        <div class="overflow-auto h-[700px] basis-1/2 relative">
+                            <button
+                                class="flex justify-end items-center p-5 absolute right-0 hover:rotate-180 transition-all ease-in duration-200"
+                                id="close-detail"><i class="fa-solid fa-x"></i></button>
+                            <div class="px-8 max-md:pl-0 max-md:pt-3 w-full mt-5">
+                                <div class="">
+                                    <h1 class="text-base font-semibold mb-1">Calvin Klein Logo Sweatpants</h1>
+                                    <div class="text-[#878787] mb-5"><span class="text-[22px]">$35.00</span></div>
+                                    <div class="text-[#878787] text-sm mb-5">
+                                        <p>Go sporty this summer with this vintage navy and white striped v-neck t-shirt
+                                            from the Nike. Perfect for pairing with denim and white kicks for a stylish
+                                            sporty vibe.</p>
+                                    </div>
+                                    <div class="mb-5">
+                                        <form action="" class="flex">
+                                            <div class="mr-[10px]">
+                                                <div
+                                                    class="relative py-2 flex justify-center items-center border border-black w-[115px] rounded-full font-semibold">
+                                                    <input type="number" min="1" value="1" inputmode="none" readonly
+                                                        class="outline-none w-full flex text-center bg-transparent"
+                                                        id="customNumberInput">
+                                                    <div
+                                                        class="absolute top-1/2  left-1/2 -translate-x-1/2 -translate-y-1/2 flex justify-between w-full">
+                                                        <div class="ml-3" id="decreaseButton"><i
+                                                                class="fa-solid fa-minus"></i></div>
+                                                        <div class="mr-3" id="increaseButton"><i
+                                                                class="fa-solid fa-plus"></i></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="mr-[10px]">
+                                                <button
+                                                    class="bg-[#56cfe1] w-[164px] rounded-full flex justify-center items-center text-center text-sm font-semibold text-white py-2.5 uppercase">Add
+                                                    to cart</button>
+                                            </div>
+                                            <div
+                                                class="flex justify-center items-center border border-black rounded-full">
+                                                <i class="fa-regular fa-heart p-3"></i>
+                                            </div>
+                                        </form>
+                                        <div class="mt-6 font-semibold text-sm">
+                                            <a href="#" class="mr-">Size Guide</a>
+                                            <a href="#">Delivery &amp; Return</a>
+                                        </div>
+                                    </div>
+                                    <div class="inline-block text-sm mb-5">
+                                        <span class="flex mb-[5px] text-[#878787] flex-shrink flex-wrap">
+                                            Categories:
+                                            <a href="" class="text-black hover:text-[#56CFE1]"> Accessories</a>,
+                                            <a href="" class="text-black hover:text-[#56CFE1]">Bottom</a>,
+                                            <a href="" class="text-black hover:text-[#56CFE1]">Men</a>,
+                                            <a href="" class="text-black hover:text-[#56CFE1]">Shoes</a>,
+                                            <a href="" class="text-black hover:text-[#56CFE1]">T-Shirt</a>,
+                                            <a href="" class="text-black hover:text-[#56CFE1]">Tops</a>
+                                        </span>
+                                        <span class="flex mb-[5px] text-[#878787] flex-shrink flex-wrap">
+                                            Tags:
+                                            <a href="" class="text-black hover:text-[#56CFE1]"> bottom </a>,
+                                            <a href="" class="text-black hover:text-[#56CFE1]">men</a>,
+                                            <a href="" class="text-black hover:text-[#56CFE1]">shoes</a>,
+                                            <a href="" class="text-black hover:text-[#56CFE1]"> short</a>
+                                        </span>
+                                    </div>
+                                    <div class="">
+                                        <h4 class="text-[21px] font-semibold">Buy this bundle and get off to 25%</h4>
+                                        <p class="text-[#878787] text-sm mb-5">Buy more save more. Save 15% when you
+                                            purchase 4 products, save 10% when
+                                            you purchase 3 products</p>
+                                        <div class="flex mb-5">
+                                            <div class="flex justify-center items-center">
+                                                <img src="./media/img/ck-1-270x270.jpg" alt="" loading="lazy"
+                                                    class="w-[70px] h-[70px]">
+                                                <span class="px-1 text-[#878787]">+</span>
+                                            </div>
+                                            <div class="flex justify-center items-center">
+                                                <img src="./media/img/p2-5-270x270.jpg" alt="" loading="lazy"
+                                                    class="w-[70px] h-[70px]">
+                                                <span class="px-1 text-[#878787]">+</span>
+                                            </div>
+                                            <div class="flex justify-center items-center">
+                                                <img src="./media/img/p10-1-300x383.jpg" alt="" loading="lazy"
+                                                    class="w-[70px] h-[70px]">
+                                                <span class="px-1 text-[#878787]">+</span>
+                                            </div>
+                                            <div class="flex justify-center items-center">
+                                                <img src="./media/img/p1-2-300x383.jpg " alt="" loading="lazy"
+                                                    class="w-[70px] h-[70px]">
+                                            </div>
+                                        </div>
+                                        <div class="list-select">
+                                            <div class="">
+                                                <div class="text-[#878787] text-sm mb-2">
+                                                    <input type="checkbox" checked="checkbox" disabled="disabled"
+                                                        class="cursor-not-allowed">
+                                                    <span>This product: Calvin Klein Logo Sweatpants - $29.75 /
+                                                        <s>$35.00</s> </span>
+                                                </div>
+                                            </div>
+                                            <div class="mb-[10px]">
+                                                <div class="text-[#878787] text-sm">
+                                                    <input type="checkbox" checked="checkbox" name="" id="">
+                                                    <span>Cyan Boheme - $38.25 / <s>$45.00</s></span>
+                                                </div>
+                                                <div class="text-[#878787] text-sm flex">
+                                                    <div
+                                                        class="border border-[#ddd] w-16 flex justify-center items-center py-2 mr-2">
+                                                        <select name="" id="" class="outline-none w-full">
+                                                            <option value="">Pink</option>
+                                                            <option value="">Cyan</option>
+                                                        </select>
+                                                    </div>
+                                                    <div
+                                                        class="border border-[#ddd] w-10 flex justify-center items-center py-2">
+                                                        <select name="" id="" class="outline-none w-full">
+                                                            <option value="">M</option>
+                                                            <option value="">S</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="text-[#878787] text-sm mb-[10px]">
+                                                <input type="checkbox" checked="checkbox" name="" id="">
+                                                <span>Leather White Trainers - $60.78 / $71.50</span>
+                                            </div>
+                                            <div class="text-[#878787] text-sm mb-[10px]">
+                                                <input type="checkbox" checked="checkbox" name="" id="">
+                                                <span>Premium Shoes Clean Package - $30.60 / $36.00</span>
+                                            </div>
+                                        </div>
+                                        <div class="text-[#878787] text-sm py-5">
+                                            <strong>Price for all:</strong>
+                                            <span>$159.38</span>/
+                                            <span>$187.50</span>
+                                            <span>(save 15%)</span>
+                                        </div>
+                                        <div class="uppercase">
+                                            <button
+                                                class="bg-[#56cfe1] border-none text-white uppercase text-base font-semibold px-8 py-2 rounded-full">Add
+                                                bundle to cart</button>
+                                        </div>
+                                    </div>
+                                    <div class="flex justify-start mt-10 mb-5">
+                                        <a href="" class="px-3 text-sm"><i class="fa-brands fa-facebook-f"></i></a>
+                                        <a href="" class="px-3 text-sm"><i class="fa-brands fa-twitter"></i></a>
+                                        <a href="" class="px-3 text-sm"><i class="fa-brands fa-pinterest"></i></a>
+                                        <a href="" class="px-3 text-sm"><i class="fa-brands fa-tumblr"></i></a>
+                                    </div>
+                                    <div class="mb-10 flex justify-start hover:text-[#56CFE1]">
+                                        <a href="../public/detailProduct.html" class="flex justify-center items-center">
+                                            <span> View details </span>
+                                            <i class="fa-solid fa-arrow-right ml-2"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- hết chi tiết -->
+        <!-- mobi menu -->
+        <div class=" bg-[rgba(0,0,0,.8)]  h-[100vh] w-[100vw] fixed z-50 hidden" id="menu-mobi">
+            <div class="w-[320px]  block h-full  bg-white -translate-x-64" id="mobi">
+                <div class="flex w-full bg-[#222] text-white p-2 text-base tracking-wider">
+                    <h3 class="flex justify-center items-center w-full font-bold uppercase relative">menu
+                        <button class="absolute left-auto right-2" id="close_mobi"><i
+                                class="fa-solid fa-x "></i></button>
+
+                    </h3>
+                </div>
+                <div class="p-5 w-full">
+                    <div class=" ">
+                        <div class="flex justify-center items-center">
+                            <span class="p-1">USD</span>
+                            <div class="flex justify-center items-center"><i class="fa fa-angle-down "></i></div>
+                        </div>
+                        <div class="flex justify-center items-center mt-5 text-[20px] font-normal">
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                            <i class="fa-regular fa-user px-5"></i>
+                            <i class="fa-regular fa-heart"></i>
+                        </div>
+                        <div class="mt-5">
+                            <ul class="text-sm">
+                                <li class="mb-5 flex justify-between  ">
+                                    <a href="../public/Home.html">Demo</a>
+                                    <span><i class="fa-solid fa-plus"></i></span>
+                                </li>
+                                <li class="mb-5 flex justify-between  ">
+                                    <a href="../public/Product.html">Shop</a>
+                                    <span><i class="fa-solid fa-plus"></i></span>
+                                </li>
+                                <li class="mb-5 flex justify-between  ">
+                                    <a href="">Product</a>
+                                    <span><i class="fa-solid fa-plus"></i></span>
+                                </li>
+                                <li class="mb-5 flex justify-between  ">
+                                    <a href="">Sale</a>
+
+                                </li>
+                                <li class="mb-5 flex justify-between  ">
+                                    <a href="">Portfolio</a>
+                                    <span><i class="fa-solid fa-plus"></i></span>
+                                </li>
+                                <li class="mb-5 flex justify-between  ">
+                                    <a href="">Lookbook</a>
+                                    <span><i class="fa-solid fa-plus"></i></span>
+                                </li>
+                                <li class="mb-5 flex justify-between ">
+                                    <a href="">Blog</a>
+                                    <span><i class="fa-solid fa-plus"></i></span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div class="container-wrapper ">
+            <header>
+                <div class="header1  bg-[#f6f6f8] text-[#878787] text-sm py-3 px-5 z-50">
+                    <div class="grid grid-cols-3  max-lg:grid-cols-2 max-md:grid-cols-none  max-md:grid-rows-2 ">
+                        <!-- Phần thứ nhất -->
+                        <div class="flex justify-start max-md:justify-center">
+                            <div class="header-text md:text-left  ">
+                                <i class="fa-solid fa-phone mr-1  "></i> +01 23456789
+                                <i class="fa-regular fa-envelope ml-2 mr-1"></i>
+                                <a href="#"><span class="__cf_email__">claue@domain.com</span></a>
+                            </div>
+                        </div>
+                        <!-- Phần thứ hai -->
+                        <div class="flex justify-center max-md:justify-center">
+                            <div class="header-text">
+                                "Summer sale discount off" <span class="cr text-[#ec0101]">50%</span> "! <a
+                                    href="#">Shop
+                                    Now</a>
+                            </div>
+                        </div>
+                        <!-- Phần thứ ba -->
+                        <div class="flex justify-end  max-lg:hidden">
+                            <div class="flex items-center">
+                                <div class="relative group">
+                                    <span class="p-1">USD</span>
+                                    <i class="fa fa-angle-down "></i>
+                                    <ul
+                                        class="absolute top-4 right-[-20px] mt-2 bg-[#f6f6f8] h-auto w-[100px] text-[#878787] hidden  group-hover:block z-50">
+                                        <li class="py-2 flex justify-center items-center  hover:bg-slate-400 w-full"><a
+                                                class="currency-item " href="javascript:void(0);"
+                                                data-currency="EUR">EUR</a></li>
+                                        <li class="py-2 flex justify-center items-center hover:bg-slate-400 w-full"><a
+                                                class="currency-item " href="javascript:void(0);"
+                                                data-currency="GBP">GBP</a></li>
+                                        <li class="py-2 flex justify-center items-center hover:bg-slate-400 w-full"><a
+                                                class="currency-item " href="javascript:void(0);"
+                                                data-currency="USD">USD</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Header-2 -->
+                <div class="py-3 px-4 bg-white w-full fixed z-40  border-b header2">
+                    <nav class="grid grid-cols-3 justify-center items-center lg:flex lg:justify-between">
+                        <div class="mobi lg:hidden" id="show-mobi">
+                            <i class='bx bx-menu-alt-left text-4xl'></i>
+                        </div>
+                        <!-- LOGO -->
+                        <div class="logo  items-center flex justify-center cursor-pointer">
+                            <img loading="lazy" src="media/img/logo.png" alt="">
+                        </div>
+                        <!-- THanh lua chon -->
+                        <ul class="flex items-center justify-end gap-8  text-[14px] text-black max-lg:hidden ">
+                            <!-- DEMO -->
+                            <li class="hover:text-[#56cfe1]  group relative  ">
+                                <a href="../public/Home.html"
+                                    class="p-2 inline-block  group-hover:border-white">Demo</a>
+                                <div
+                                    class="grid grid-cols-2 p-2  absolute left-0 top-[70px] group-hover:top-[48px] bg-white bg-opacity-90 w-max  invisible group-hover:opacity-100 group-hover:visible  transition-all ease-in-out duration-500 opacity-0 z-20 border border-gray-200">
+                                    <!-- 1 -->
+                                    <ul class="p-1">
+                                        <li
+                                            class="block pr-12 py-3 hover:bg-white hover:text-black cursor-pointer text-black border-b border-gray-200">
+                                            <a href="">Homepages</a>
+                                        </li>
+                                        <li
+                                            class="block pr-12 py-3 hover:bg-white hover:text-black cursor-pointer text-[#878787] border-b border-gray-200">
+                                            <a href="">Dropdown Menu</a>
+                                        </li>
+                                        <li
+                                            class="block pr-12 py-3 hover:bg-white hover:text-black cursor-pointer text-[#878787] border-b border-gray-200">
+                                            <a href="">Dropdown Menu</a>
+                                        </li>
+                                        <li
+                                            class="block pr-12 py-3 hover:bg-white hover:text-black cursor-pointer text-[#878787] border-b border-gray-200">
+                                            <a href="">Dropdown Menu</a>
+                                        </li>
+                                        <li
+                                            class="block pxr12 py-3 hover:bg-white hover:text-black cursor-pointer text-[#878787] border-b border-gray-200">
+                                            <a href="">Dropdown Menu</a>
+                                        </li>
+                                        <li
+                                            class="block pr-12 py-3 hover:bg-white hover:text-black cursor-pointer text-[#878787] border-b border-gray-200">
+                                            <a href="">Dropdown Menu</a>
+                                        </li>
+                                        <li
+                                            class="block pr-12 py-3 hover:bg-white hover:text-black cursor-pointer text-[#878787] border-b border-gray-200">
+                                            <a href="">Dropdown Menu</a>
+                                        </li>
+                                        <li
+                                            class="block pr-12 py-3 hover:bg-white hover:text-black cursor-pointer text-[#878787] border-b border-gray-200">
+                                            <a href="">Dropdown Menu</a>
+                                        </li>
+                                        <li
+                                            class="block pr-12 py-3 hover:bg-white hover:text-black cursor-pointer text-[#878787] border-gray-200">
+                                            <a href="">Dropdown Menu</a>
+                                        </li>
+                                    </ul>
+                                    <!-- 2 -->
+                                    <ul class="p-1 pl-6">
+                                        <li
+                                            class="block pr-12 py-3 hover:bg-white hover:text-black cursor-pointer text-black border-b border-gray-200">
+                                            <a href="">Header Layout</a>
+                                        </li>
+                                        <li
+                                            class="block pr-12 py-3 hover:bg-white hover:text-black cursor-pointer text-[#878787] border-b border-gray-200">
+                                            <a href="">Dropdown Menu</a>
+                                        </li>
+                                        <li
+                                            class="block pr-12 py-3 hover:bg-white hover:text-black cursor-pointer text-[#878787] border-b border-gray-200">
+                                            <a href="">Dropdown Menu</a>
+                                        </li>
+                                        <li
+                                            class="block pr-12 py-3 hover:bg-white hover:text-black cursor-pointer text-[#878787] border-b border-gray-200">
+                                            <a href="">Dropdown Menu</a>
+                                        </li>
+                                        <li
+                                            class="block pr-12 py-3 hover:bg-white hover:text-black cursor-pointer text-[#878787] border-b border-gray-200">
+                                            <a href="">Dropdown Menu</a>
+                                        </li>
+                                        <li
+                                            class="block pr-12 py-3 hover:bg-white hover:text-black cursor-pointer text-[#878787] border-b border-gray-200">
+                                            <a href="">Dropdown Menu</a>
+                                        </li>
+                                    </ul>
+
+                                </div>
+
+                            </li>
+                            <!-- SHOP -->
+                            <li class="cursor-pointer py-1 hover:text-[#56cfe1] group relative">
+                                <a href="../public/Product.html"
+                                    class="group-hover:border-white before:content-['New'] before:text-white before:absolute before:bg-[#01bad4] before:top-[-8px] before:right-[-28px] before:text-[9px] before:py-[1px] before:px-[7px] before:rounded-full text-[#56cfe1]">Shop</a>
+                                <ul
+                                    class="absolute left-0 bg-white bg-opacity-90 w-max mt-6 opacity-0 invisible group-hover:opacity-100 group-hover:visible group-hover:mt-5 transition-all duration-500 z-20 border border-gray-200">
+                                    <li
+                                        class="block pr-12 pl-3 py-3 hover:bg-white hover:text-black cursor-pointer text-black border-b border-gray-200">
+                                        <a href="">Header Layout shop menu </a>
+                                    </li>
+                                    <li
+                                        class="block pr-12 pl-3 py-3 hover:bg-white hover:text-black cursor-pointer text-[#878787] border border-gray-100">
+                                        <a href="">Dropdown Menu</a>
+                                    </li>
+                                    <li
+                                        class="block pr-12 pl-3 py-3 hover:bg-white hover:text-black cursor-pointer text-[#878787] border border-gray-100">
+                                        <a href="">Dropdown Menu</a>
+                                    </li>
+                                    <li
+                                        class="block pr-12 pl-3 py-3 hover:bg-white hover:text-black cursor-pointer text-[#878787] border border-gray-100">
+                                        <a href="">Dropdown Menu</a>
+                                    </li>
+                                    <li
+                                        class="block pr-12 pl-3 py-3 hover:bg-white hover:text-black cursor-pointer text-[#878787] border border-gray-100">
+                                        <a href="">Dropdown Menu</a>
+                                    </li>
+                                    <li
+                                        class="block pr-12 pl-3 py-3 hover:bg-white hover:text-black cursor-pointer text-[#878787] border border-gray-100">
+                                        <a href="">Dropdown Menu</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <!-- Product -->
+                            <li class="top-menu-item group relative ">
+                                <a href="#" class="hover:text-[#56cfe1] group-hover:border-white">Product</a>
+                                <div
+                                    class="grid grid-cols-2 p-2 pr-7  absolute left-0 top-[70px] group-hover:top-[40px] bg-white bg-opacity-90 w-max  invisible group-hover:opacity-100 group-hover:visible  transition-all ease-in-out duration-500 opacity-0 z-20 border border-gray-200">
+                                    <!-- 1 -->
+                                    <ul class="p-1">
+                                        <li
+                                            class="block pr-12 py-3 hover:bg-white hover:text-black cursor-pointer text-black border-b border-gray-200">
+                                            <a href="">Homepages</a>
+                                        </li>
+                                        <li
+                                            class="block pr-12 py-3 hover:bg-white hover:text-black cursor-pointer text-[#878787] border-b border-gray-200">
+                                            <a href="">Dropdown Menu</a>
+                                        </li>
+                                        <li
+                                            class="block pr-12 py-3 hover:bg-white hover:text-black cursor-pointer text-[#878787] border-b border-gray-200">
+                                            <a href="">Dropdown Menu</a>
+                                        </li>
+                                        <li
+                                            class="block pr-12 py-3 hover:bg-white hover:text-black cursor-pointer text-[#878787] border-b border-gray-200">
+                                            <a href="">Dropdown Menu</a>
+                                        </li>
+                                        <li
+                                            class="block pxr12 py-3 hover:bg-white hover:text-black cursor-pointer text-[#878787] border-b border-gray-200">
+                                            <a href="">Dropdown Menu</a>
+                                        </li>
+                                        <li
+                                            class="block pr-12 py-3 hover:bg-white hover:text-black cursor-pointer text-[#878787] border-b border-gray-200">
+                                            <a href="">Dropdown Menu</a>
+                                        </li>
+                                        <li
+                                            class="block pr-12 py-3 hover:bg-white hover:text-black cursor-pointer text-[#878787] border-b border-gray-200">
+                                            <a href="">Dropdown Menu</a>
+                                        </li>
+                                        <li
+                                            class="block pr-12 py-3 hover:bg-white hover:text-black cursor-pointer text-[#878787] border-b border-gray-200">
+                                            <a href="">Dropdown Menu</a>
+                                        </li>
+                                        <li
+                                            class="block pr-12 py-3 hover:bg-white hover:text-black cursor-pointer text-[#878787] ">
+                                            <a href="">Dropdown Menu</a>
+                                        </li>
+                                    </ul>
+                                    <!-- 2 -->
+                                    <ul class="p-1 pl-6">
+                                        <li
+                                            class="block pr-12 py-3 hover:bg-white hover:text-black cursor-pointer text-black border-b border-gray-200">
+                                            <a href="">Header Layout</a>
+                                        </li>
+                                        <li
+                                            class="block pr-12 py-3 hover:bg-white hover:text-black cursor-pointer text-[#878787] border-b border-gray-200">
+                                            <a href="">Dropdown Menu</a>
+                                        </li>
+                                        <li
+                                            class="block pr-12 py-3 hover:bg-white hover:text-black cursor-pointer text-[#878787] border-b border-gray-200">
+                                            <a href="">Dropdown Menu</a>
+                                        </li>
+                                        <li
+                                            class="block pr-12 py-3 hover:bg-white hover:text-black cursor-pointer text-[#878787] border-b border-gray-200">
+                                            <a href="">Dropdown Menu</a>
+                                        </li>
+                                        <li
+                                            class="block pr-12 py-3 hover:bg-white hover:text-black cursor-pointer text-[#878787] border-b border-gray-200">
+                                            <a href="">Dropdown Menu</a>
+                                        </li>
+                                        <li
+                                            class="block pr-12 py-3 hover:bg-white hover:text-black cursor-pointer text-[#878787] border-b border-gray-200">
+                                            <a href="">Dropdown Menu</a>
+                                        </li>
+                                    </ul>
+
+                                </div>
+                            </li>
+                            <!-- SALE -->
+                            <li class="text-[#ec0101] relative">
+                                <a href="#"
+                                    class="hover:text-[#56cfe1] before:content-['Sale'] before:text-white before:absolute before:bg-[#ffa800] before:top-[-10px] before:right-[-28px] before:text-[9px] before:py-[1px] before:px-[7px] before:rounded-full">Sale</a>
+                            </li>
+                            <!-- PROTFOIO -->
+                            <li class="top-menu-item group relative ">
+                                <a href="#" class="hover:text-[#56cfe1] group-hover:border-white">Portfolio</a>
+                                <ul
+                                    class="absolute left-0 bg-white bg-opacity-90 w-max mt-6 opacity-0 invisible group-hover:opacity-100 group-hover:visible group-hover:mt-5 transition-all duration-500 z-20 border border-gray-200">
+                                    <li
+                                        class="block pr-12 pl-3 py-3 hover:bg-white hover:text-black cursor-pointer text-black border-b border-gray-200">
+                                        <a href="">Header Layout shop menu </a>
+                                    </li>
+                                    <li
+                                        class="block pr-12 pl-3 py-3 hover:bg-white hover:text-black cursor-pointer text-[#878787] border border-gray-100">
+                                        <a href="">Dropdown Menu</a>
+                                    </li>
+                                    <li
+                                        class="block pr-12 pl-3 py-3 hover:bg-white hover:text-black cursor-pointer text-[#878787] border border-gray-100">
+                                        <a href="">Dropdown Menu</a>
+                                    </li>
+                                    <li
+                                        class="block pr-12 pl-3 py-3 hover:bg-white hover:text-black cursor-pointer text-[#878787] border border-gray-100">
+                                        <a href="">Dropdown Menu</a>
+                                    </li>
+                                    <li
+                                        class="block pr-12 pl-3 py-3 hover:bg-white hover:text-black cursor-pointer text-[#878787] border border-gray-100">
+                                        <a href="">Dropdown Menu</a>
+                                    </li>
+                                    <li
+                                        class="block pr-12 pl-3 py-3 hover:bg-white hover:text-black cursor-pointer text-[#878787] border border-gray-100">
+                                        <a href="">Dropdown Menu</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <!-- LOOKBOOK -->
+                            <li class="top-menu-item group relative ">
+                                <a href="#" class="hover:text-[#56cfe1] group-hover:border-white">Lookbook</a>
+                                <ul
+                                    class="absolute left-0 bg-white bg-opacity-90 w-max mt-6 opacity-0 invisible group-hover:opacity-100 group-hover:visible group-hover:mt-5 transition-all duration-500 z-20 border border-gray-200">
+
+                                    <li
+                                        class="block pr-12 pl-3 py-3 hover:bg-white hover:text-black cursor-pointer text-[#878787] border border-gray-100">
+                                        <a href="">Lookbook in product</a>
+                                    </li>
+                                    <li
+                                        class="block pr-12 pl-3 py-3 hover:bg-white hover:text-black cursor-pointer text-[#878787] border border-gray-100">
+                                        <a href="">Dropdown Menu</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <!-- BOLG -->
+                            <li class="top-menu-item group relative ">
+                                <a href="#" class="hover:text-[#56cfe1] group-hover:border-white">Blog</a>
+                                <ul
+                                    class="absolute left-0 bg-[#ffffff] bg-opacity-90 w-max mt-6 opacity-0 invisible group-hover:opacity-100 group-hover:visible group-hover:mt-5 transition-all duration-500 z-20 border border-gray-200">
+                                    <li
+                                        class="block pr-12 pl-3 py-3 hover:bg-white hover:text-black cursor-pointer text-black border-b border-gray-100">
+                                        <a href="">Header Layout shop menu </a>
+                                    </li>
+                                    <li
+                                        class="block pr-12 pl-3 py-3 hover:bg-white hover:text-black cursor-pointer text-[#878787] border border-gray-100">
+                                        <a href="">Dropdown Menu</a>
+                                    </li>
+                                    <li
+                                        class="block pr-12 pl-3 py-3 hover:bg-white hover:text-black cursor-pointer text-[#878787] border border-gray-100">
+                                        <a href="">Dropdown Menu</a>
+                                    </li>
+                                    <li
+                                        class="block pr-12 pl-3 py-3 hover:bg-white hover:text-black cursor-pointer text-[#878787] border border-gray-100">
+                                        <a href="">Dropdown Menu</a>
+                                    </li>
+                                    <li
+                                        class="block pr-12 pl-3 py-3 hover:bg-white hover:text-black cursor-pointer text-[#878787] border border-gray-100">
+                                        <a href="">Dropdown Menu</a>
+                                    </li>
+                                    <li
+                                        class="block pr-12 pl-3 py-3 hover:bg-white hover:text-black cursor-pointer text-[#878787] border border-gray-100">
+                                        <a href="">Dropdown Menu</a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                        <!-- phan icon header -->
+                        <ul class=" flex flex-row justify-end items-center gap-3 text-[24px] text-black">
+                            <!-- Tìm kiếm -->
+                            <li class="max-md:hidden" id="openForm">
+                                <a href="#" class="">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                        stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                            d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" />
+                                    </svg>
+                                </a>
+                            </li>
+
+                            <!-- Account -->
+                            <li class="max-md:hidden">
+                                <a href="../public/Account.html">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                        stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                            d="M17.982 18.725A7.488 7.488 0 0012 15.75a7.488 7.488 0 00-5.982 2.975m11.963 0a9 9 0 10-11.963 0m11.963 0A8.966 8.966 0 0112 21a8.966 8.966 0 01-5.982-2.275M15 9.75a3 3 0 11-6 0 3 3 0 016 0z" />
+                                    </svg>
+                                </a>
+                            </li>
+
+                            <!-- Like view -->
+                            <li class="max-md:hidden">
+                                <a href="">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                        stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                            d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z" />
+                                    </svg>
+                                </a>
+                            </li>
+
+                            <!-- Shop-Bag -->
+                            <li id="show_cart">
+                                <div class="flex items-center space-x-4 relative">
+                                    <a href="#"
+                                        class="text-center text-[#222]  before:content-['2'] before:text-white before:text-xs
+                               before:w-5 before:h-5 before:rounded-full before:absolute  before:bg-[#222] before:-top-2 before:-right-[9px] before:flex before:justify-center before:items-center   ">
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                            stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                            <path stroke-linecap="round" stroke-linejoin="round"
+                                                d="M15.75 10.5V6a3.75 3.75 0 10-7.5 0v4.5m11.356-1.993l1.263 12c.07.665-.45 1.243-1.119 1.243H4.25a1.125 1.125 0 01-1.12-1.243l1.264-12A1.125 1.125 0 015.513 7.5h12.974c.576 0 1.059.435 1.119 1.007zM8.625 10.5a.375.375 0 11-.75 0 .375.375 0 01.75 0zm7.5 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z" />
+                                        </svg>
+                                    </a>
+                                </div>
+
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+                <!-- End tab -->
+            </header>
+
+            <main class="">
+                <div class="w-full ">
+                    <div class="flex justify-center items-center ">
+                        <ul class=" text-[#222] text-sm  flex  font-normal align-baseline flex-nowrap overflow-x-auto">
+                            <li class="my-[10px] px-[15px] hover:text-[#56cfe1] whitespace-nowrap"><a href="#">
+                                    Accessories
+                                </a></li>
+                            <li class="my-[10px] px-[15px] hover:text-[#56cfe1] whitespace-nowrap"><a href="#">
+                                    Bottom</a>
+                            </li>
+                            <li class="my-[10px] px-[15px] hover:text-[#56cfe1] whitespace-nowrap"><a href="#">Denim
+                                </a>
+                            </li>
+                            <li class="my-[10px] px-[15px] hover:text-[#56cfe1] whitespace-nowrap"><a href="#">Dress
+                                </a>
+                            </li>
+                            <li class="my-[10px] px-[15px] hover:text-[#56cfe1] whitespace-nowrap"><a href="#">
+                                    Jackets</a>
+                            </li>
+                            <li class="my-[10px] px-[15px] hover:text-[#56cfe1] whitespace-nowrap"><a href="#">
+                                    Jewellery</a></li>
+                            <li class="my-[10px] px-[15px] hover:text-[#56cfe1] whitespace-nowrap"><a href="#">MenShoes
+                                </a>
+                            </li>
+                            <li class="my-[10px] px-[15px] hover:text-[#56cfe1] whitespace-nowrap"><a href="#">T-Shirt
+                                </a>
+                            </li>
+                            <li class="my-[10px] px-[15px] hover:text-[#56cfe1] whitespace-nowrap"><a href="#"> Tops</a>
+                            </li>
+                            <li class="my-[10px] px-[15px] hover:text-[#56cfe1] whitespace-nowrap"><a href="#">
+                                    Women</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="relative ">
+                        <div class="w-full h-full before:w-full before:bg-[rgba(0,0,0,.5)] before:content-['']  before:h-full before:absolute before:top-0 before:left-0 py-[75px]
+                    " style="background-image: url(./media/img/baner-shop.jpg); background-size: cover ; background-repeat:repeat-y ; background-position: center; background-attachment: scroll;">
+                        </div>
+                        <div
+                            class="font-poppins absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-white block  text-center w-full py-[50px]">
+                            <h1 class="text-xl">Shop All Products</h1>
+                            <p class="mt-[5px] text-sm">Online fashion, furniture, handmade... store</p>
+                        </div>
+                    </div>
+                    <div class="containre-product w-[73.125rem] px-5 m-auto max-lg:w-[46rem]  max-w-full mt-[30px] ">
+                        <div class="flex justify-between relative">
+                            <div class="">
+                                <div class="cursor-pointer text-[#878787] hover:text-black text-2xl"><i
+                                        class="fa fa-sliders fwb"></i></div>
+                            </div>
+                            <div class="border-[#ddd] border-2 rounded-full w-[200px]">
+                                <select
+                                    class=" pl-3 outline-none text-[13px]  bg-transparent text-[#878787] py-2 w-[185px]  flex justify-center items-center ">
+                                    <option value="popularity" class="w-full">Sort by popularity</option>
+                                    <option value="rating" class="w-full">Sort by average rating</option>
+                                    <option value="date" class="w-full" selected="selected">Sort by latest</option>
+                                    <option value="price" class="w-full">Sort by price: low to high</option>
+                                    <option value="price-desc" class="w-full">Sort by price: high to low</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="product mt-[30px]  z-0">
+                            <div
+                                class="product1 grid grid-cols-4 gap-8 max-lg:grid-cols-3 max-sm:grid-cols-2 transition-all ease-out duration-500">
+                                <!-- 1 -->
+                                <div class="card">
+                                    <div class="product-img relative group">
+                                        <div class="">
+                                            <a href=""
+                                                class="transition-opacity duration-300 ease-in-out group-hover:opacity-0">
+                                                <img src="./media/img/p2-5-300x383.jpg" alt="" loading="lazy">
+                                            </a>
+                                            <a href="../public/detailProduct.html"
+                                                class="absolute inset-0 opacity-0 transition-opacity duration-300 ease-in-out group-hover:opacity-100
+                                        before:bg-[rgba(0,0,0,.1)] before:content-['']  before:h-full before:absolute before:top-0 before:left-0 before:w-full before:hidden before:group-hover:block before:transition-all before:duration-300">
+                                                <img src="./media/img/trending-Card-1.jpg" alt="" loading="lazy">
+                                            </a>
+                                        </div>
+                                        <div class="absolute top-3 left-3 ">
+                                            <a href="#" class="hidden group-hover:block">
+                                                <i class="fa-regular fa-heart fa-lg text-white "></i>
+                                            </a>
+                                        </div>
+                                        <div
+                                            class="product-btn  absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 grid grid-rows-2 gap-2 group-hover:opacity-100 opacity-0 group-hover:top-1/2 group-hover:transition-all group-hover:duration-300 ">
+                                            <div
+                                                class="bg-white hover:text-white hover:bg-black rounded-full py-[10px] px-6 font-poppins flex text-center text-sm">
+                                                <a href="./detailProduct.html" class="whitespace-nowrap">Seclect
+                                                    options</a>
+                                            </div>
+                                            <div
+                                                class="quickShop bg-white hover:text-white hover:bg-black rounded-full py-[10px] px-6 font-poppins flex text-center text-sm justify-center cursor-pointer">
+                                                <button class="cursor-pointer">Quick Shop</button>
+                                            </div>
+                                        </div>
+
+                                    </div>
+
+                                    <div class="product-info mt-[15px] font-poppins text-sm  ">
+                                        <h3 class="text-sm hover:text-[#56CFE1] cursor-pointer">Cyan Boheme Cyan</h3>
+                                        <span class="text-[#696969]">$40.00 – $45.00</span>
+                                        <div class="flex">
+                                            <Bottom class="rounded-full m-1 flex bg-black border-[#333] border-[2px]">
+                                                <span class="w-4 h-4 bg-[#25bdb0] rounded-full"></span>
+                                            </Bottom>
+                                            <Bottom class="rounded-full m-1 flex  border-[#ddd] border-[2px]">
+                                                <span class="w-4 h-4 bg-[#fcc6de] rounded-full"></span>
+                                            </Bottom>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- 2 -->
+                                <div class="card">
+                                    <div class="product-img relative group">
+                                        <div class="">
+                                            <a href=""
+                                                class="transition-opacity duration-300 ease-in-out group-hover:opacity-0">
+                                                <img src="./media/img/calvinKlein.jpg" alt="" loading="lazy">
+                                            </a>
+                                            <a href="../public/detailProduct.html"
+                                                class="absolute inset-0 opacity-0 transition-opacity duration-300 ease-in-out group-hover:opacity-100
+                                        before:bg-[rgba(0,0,0,.1)] before:content-['']  before:h-full before:absolute before:top-0 before:left-0 before:w-full before:hidden before:group-hover:block before:transition-all before:duration-300">
+                                                <img src="./media/img/calvinKlein2.jpg" alt="" loading="lazy">
+                                            </a>
+                                        </div>
+                                        <div class="absolute top-3 left-3 ">
+                                            <a href="#" class="hidden group-hover:block">
+                                                <i class="fa-regular fa-heart fa-lg text-white "></i>
+                                            </a>
+                                        </div>
+
+                                        <div
+                                            class="product-btn  absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 grid grid-rows-2 gap-2 group-hover:opacity-100 opacity-0 group-hover:top-1/2 group-hover:transition-all group-hover:duration-300 ">
+                                            <div
+                                                class="bg-white hover:text-white hover:bg-black rounded-full py-[10px] px-6 font-poppins flex text-center text-sm">
+                                                <a href="./detailProduct.html" class="whitespace-nowrap">Seclect
+                                                    options</a>
+                                            </div>
+                                            <div
+                                                class="quickShop bg-white hover:text-white hover:bg-black rounded-full py-[10px] px-6 font-poppins flex text-center text-sm justify-center cursor-pointer">
+                                                <button class="cursor-pointer ">Quick Shop</button>
+                                            </div>
+                                        </div>
+
+                                    </div>
+
+                                    <div class="product-info mt-[15px] font-poppins text-sm ">
+                                        <h3 class="text-sm hover:text-[#56CFE1] cursor-pointer">Calvin Klein Logo
+                                            Sweatpants
+                                        </h3>
+                                        <span class="text-[#696969]">$35.00</span>
+                                    </div>
+                                </div>
+                                <!-- 3 -->
+                                <div class="card">
+                                    <div class="product-img relative group">
+                                        <div class="">
+                                            <a href=""
+                                                class="transition-opacity duration-300 ease-in-out group-hover:opacity-0">
+                                                <img src="./media/img/Bobbi_Chunky_Pom_Beanie2-300x383.jpg" alt=""
+                                                    loading="lazy">
+                                            </a>
+                                            <a href="../public/detailProduct.html"
+                                                class="absolute inset-0 opacity-0 transition-opacity duration-300 ease-in-out group-hover:opacity-100
+                                        before:bg-[rgba(0,0,0,.1)] before:content-['']  before:h-full before:absolute before:top-0 before:left-0 before:w-full before:hidden before:group-hover:block before:transition-all before:duration-300">
+                                                <img src="./media/img/Bobbi_Chunky_Pom_Beanie3-300x383.jpg" alt=""
+                                                    loading="lazy">
+                                            </a>
+                                        </div>
+                                        <div class="absolute top-3 left-3 ">
+                                            <a href="#" class="hidden group-hover:block">
+                                                <i class="fa-regular fa-heart fa-lg text-white "></i>
+                                            </a>
+                                        </div>
+
+                                        <div
+                                            class="product-btn  absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 grid grid-rows-2 gap-2 group-hover:opacity-100 opacity-0 group-hover:top-1/2 group-hover:transition-all group-hover:duration-300 ">
+                                            <div
+                                                class="bg-white hover:text-white hover:bg-black rounded-full py-[10px] px-6 font-poppins flex text-center text-sm">
+                                                <a href="./detailProduct.html" class="whitespace-nowrap">Seclect
+                                                    options</a>
+                                            </div>
+                                            <div
+                                                class="quickShop bg-white hover:text-white hover:bg-black rounded-full py-[10px] px-6 font-poppins flex text-center text-sm justify-center cursor-pointer">
+                                                <button class="cursor-pointer">Quick Shop</button>
+                                            </div>
+                                        </div>
+
+                                    </div>
+
+                                    <div class="product-info mt-[15px] font-poppins text-sm ">
+                                        <h3 class="text-sm hover:text-[#56CFE1] cursor-pointer">Cuffed Beanie Pink</h3>
+                                        <span class="text-[#696969]">$15.00</span>
+                                        <div class="flex">
+                                            <Bottom class="rounded-full m-1 flex bg-black border-[#333] border-[2px]">
+                                                <span class="w-4 h-4 bg-[#25bdb0] rounded-full"></span>
+                                            </Bottom>
+                                            <Bottom class="rounded-full m-1 flex  border-[#ddd] border-[2px]">
+                                                <span class="w-4 h-4 bg-[#fcc6de] rounded-full"></span>
+                                            </Bottom>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- 4 -->
+                                <div class="card">
+                                    <div class="product-img relative group">
+                                        <div class="">
+                                            <a href=""
+                                                class="transition-opacity duration-300 ease-in-out group-hover:opacity-0">
+                                                <img src="./media/img/p8-1-300x383.jpg" alt="" loading="lazy">
+                                            </a>
+                                            <a href="../public/detailProduct.html"
+                                                class="absolute inset-0 opacity-0 transition-opacity duration-300 ease-in-out group-hover:opacity-100
+                                        before:bg-[rgba(0,0,0,.1)] before:content-['']  before:h-full before:absolute before:top-0 before:left-0 before:w-full before:hidden before:group-hover:block before:transition-all before:duration-300">
+                                                <img src="./media/img/p8-4-300x383.jpg" alt="" loading="lazy">
+                                            </a>
+                                        </div>
+                                        <div class="absolute top-3 left-3 ">
+                                            <a href="#" class="hidden group-hover:block">
+                                                <i class="fa-regular fa-heart fa-lg text-white "></i>
+                                            </a>
+                                        </div>
+
+                                        <div
+                                            class="product-btn  absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 grid grid-rows-2 gap-2 group-hover:opacity-100 opacity-0 group-hover:top-1/2 group-hover:transition-all group-hover:duration-300 ">
+                                            <div
+                                                class="bg-white hover:text-white hover:bg-black rounded-full py-[10px] px-6 font-poppins flex text-center text-sm">
+                                                <a href="./detailProduct.html" class="whitespace-nowrap">Seclect
+                                                    options</a>
+                                            </div>
+                                            <div
+                                                class="quickShop bg-white hover:text-white hover:bg-black rounded-full py-[10px] px-6 font-poppins flex text-center text-sm justify-center cursor-pointer">
+                                                <button class="cursor-pointer">Quick Shop</button>
+                                            </div>
+                                        </div>
+
+                                    </div>
+
+                                    <div class="product-info mt-[15px] font-poppins text-sm ">
+                                        <h3 class="text-sm hover:text-[#56CFE1] cursor-pointer">Short Sleeved Hoodie
+                                            With
+                                            Step Hem Grey</h3>
+                                        <span class="text-[#696969]">$35.00</span>
+                                        <div class="flex">
+                                            <Bottom class="rounded-full m-1 flex bg-black border-[#333] border-[2px]">
+                                                <span class="w-4 h-4 bg-[#25bdb0] rounded-full"></span>
+                                            </Bottom>
+                                            <Bottom class="rounded-full m-1 flex  border-[#ddd] border-[2px]">
+                                                <span class="w-4 h-4 bg-[#fcc6de] rounded-full"></span>
+                                            </Bottom>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- 5 -->
+                                <div class="card">
+                                    <div class="product-img relative group">
+                                        <div class="">
+                                            <a href=""
+                                                class="transition-opacity duration-300 ease-in-out group-hover:opacity-0">
+                                                <img src="./media/img/Mercury_Tee24-300x383.jpg" alt="" loading="lazy">
+                                            </a>
+                                            <a href="../public/detailProduct.html"
+                                                class="absolute inset-0 opacity-0 transition-opacity duration-300 ease-in-out group-hover:opacity-100
+                                        before:bg-[rgba(0,0,0,.1)] before:content-['']  before:h-full before:absolute before:top-0 before:left-0 before:w-full before:hidden before:group-hover:block before:transition-all before:duration-300">
+                                                <img src="./media/img/Mercury_Tee25-300x383.jpg" alt="" loading="lazy">
+                                            </a>
+                                        </div>
+                                        <div class="absolute top-3 left-3 ">
+                                            <a href="#" class="hidden group-hover:block">
+                                                <i class="fa-regular fa-heart fa-lg text-white "></i>
+                                            </a>
+                                        </div>
+
+                                        <div
+                                            class="product-btn  absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 grid grid-rows-2 gap-2 group-hover:opacity-100 opacity-0 group-hover:top-1/2 group-hover:transition-all group-hover:duration-300 ">
+                                            <div
+                                                class="bg-white hover:text-white hover:bg-black rounded-full py-[10px] px-6 font-poppins flex text-center text-sm">
+                                                <a href="./detailProduct.html" class="whitespace-nowrap">Seclect
+                                                    options</a>
+                                            </div>
+                                            <div
+                                                class="quickShop bg-white hover:text-white hover:bg-black rounded-full py-[10px] px-6 font-poppins flex text-center text-sm justify-center cursor-pointer">
+                                                <button class="cursor-pointer">Quick Shop</button>
+                                            </div>
+                                        </div>
+
+                                    </div>
+
+                                    <div class="product-info mt-[15px] font-poppins text-sm ">
+                                        <h3 class="text-sm hover:text-[#56CFE1] cursor-pointer">Woleen Tee Blue</h3>
+                                        <span class="text-[#696969]">$68.00</span>
+                                        <div class="flex">
+                                            <Bottom class="rounded-full m-1 flex bg-black border-[#333] border-[2px]">
+                                                <span class="w-4 h-4 bg-[#25bdb0] rounded-full"></span>
+                                            </Bottom>
+                                            <Bottom class="rounded-full m-1 flex  border-[#ddd] border-[2px]">
+                                                <span class="w-4 h-4 bg-[#fcc6de] rounded-full"></span>
+                                            </Bottom>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- 6 -->
+                                <div class="card">
+                                    <div class="product-img relative group">
+                                        <div class="">
+                                            <a href=""
+                                                class="transition-opacity duration-300 ease-in-out group-hover:opacity-0">
+                                                <img src="./media/img/Bobbi_Chunky_Pom_Beanie4-300x383.jpg" alt=""
+                                                    loading="lazy">
+                                            </a>
+                                            <a href="../public/detailProduct.html"
+                                                class="absolute inset-0 opacity-0 transition-opacity duration-300 ease-in-out group-hover:opacity-100
+                                        before:bg-[rgba(0,0,0,.1)] before:content-['']  before:h-full before:absolute before:top-0 before:left-0 before:w-full before:hidden before:group-hover:block before:transition-all before:duration-300">
+                                                <img src="./media/img/Bobbi_Chunky_Pom_Beanie5-300x383.jpg" alt=""
+                                                    loading="lazy">
+                                            </a>
+                                        </div>
+                                        <div class="absolute top-3 left-3 ">
+                                            <a href="#" class="hidden group-hover:block">
+                                                <i class="fa-regular fa-heart w-5 h-[22px] text-white "></i>
+                                            </a>
+                                        </div>
+
+                                        <div
+                                            class="product-btn  absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 grid grid-rows-2 gap-2 group-hover:opacity-100 opacity-0 group-hover:top-1/2 group-hover:transition-all group-hover:duration-300 ">
+                                            <div
+                                                class="bg-white hover:text-white hover:bg-black rounded-full py-[10px] px-6 font-poppins flex text-center text-sm">
+                                                <a href="./detailProduct.html" class="whitespace-nowrap">Seclect
+                                                    options</a>
+                                            </div>
+                                            <div
+                                                class="quickShop bg-white hover:text-white hover:bg-black rounded-full py-[10px] px-6 font-poppins flex text-center text-sm justify-center cursor-pointer">
+                                                <button class="cursor-pointer">Quick Shop</button>
+                                            </div>
+                                        </div>
+
+                                    </div>
+
+                                    <div class="product-info mt-[15px] font-poppins text-sm ">
+                                        <h3 class="text-sm hover:text-[#56CFE1] cursor-pointer">Grey Beanie Grey</h3>
+                                        <span class="text-[#696969]">$15.00</span>
+                                        <div class="flex">
+                                            <Bottom class="rounded-full m-1 flex bg-black border-[#333] border-[2px]">
+                                                <span class="w-4 h-4 bg-[#25bdb0] rounded-full"></span>
+                                            </Bottom>
+                                            <Bottom class="rounded-full m-1 flex  border-[#ddd] border-[2px]">
+                                                <span class="w-4 h-4 bg-[#fcc6de] rounded-full"></span>
+                                            </Bottom>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- 7 -->
+                                <div class="card">
+                                    <div class="product-img relative group">
+                                        <div class="">
+                                            <a href=""
+                                                class="transition-opacity duration-300 ease-in-out group-hover:opacity-0">
+                                                <img src="./media/img/p2-1-300x383.jpg" alt="" loading="lazy">
+                                            </a>
+                                            <a href="../public/detailProduct.html"
+                                                class="absolute inset-0 opacity-0 transition-opacity duration-300 ease-in-out group-hover:opacity-100
+                                        before:bg-[rgba(0,0,0,.1)] before:content-['']  before:h-full before:absolute before:top-0 before:left-0 before:w-full before:hidden before:group-hover:block before:transition-all before:duration-300">
+                                                <img src="./media/img/p2-5-300x383.jpg" alt="" loading="lazy">
+                                            </a>
+                                        </div>
+                                        <div class="absolute top-3 left-3 ">
+                                            <a href="#" class="hidden group-hover:block">
+                                                <i class="fa-regular fa-heart fa-lg text-white "></i>
+                                            </a>
+                                        </div>
+
+                                        <div
+                                            class="product-btn  absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 grid grid-rows-2 gap-2 group-hover:opacity-100 opacity-0 group-hover:top-1/2 group-hover:transition-all group-hover:duration-300 ">
+                                            <div
+                                                class="bg-white hover:text-white hover:bg-black rounded-full py-[10px] px-6 font-poppins flex text-center text-sm">
+                                                <a href="./detailProduct.html" class="whitespace-nowrap">Seclect
+                                                    options</a>
+                                            </div>
+                                            <div
+                                                class="quickShop bg-white hover:text-white hover:bg-black rounded-full py-[10px] px-6 font-poppins flex text-center text-sm justify-center cursor-pointer">
+                                                <button class="cursor-pointer">Quick Shop</button>
+                                            </div>
+                                        </div>
+
+                                    </div>
+
+                                    <div class="product-info mt-[15px] font-poppins text-sm ">
+                                        <h3 class="text-sm hover:text-[#56CFE1] cursor-pointer">Pink Leather Watch</h3>
+                                        <span class="text-[#696969]">$35.00</span>
+                                    </div>
+                                </div>
+                                <!-- 8 -->
+                                <div class="card">
+                                    <div class="product-img relative group">
+                                        <div class="">
+                                            <a href=""
+                                                class="transition-opacity duration-300 ease-in-out group-hover:opacity-0">
+                                                <img src="./media/img/p7-1-300x383.jpg" alt="" loading="lazy">
+                                            </a>
+                                            <a href="../public/detailProduct.html"
+                                                class="absolute inset-0 opacity-0 transition-opacity duration-300 ease-in-out group-hover:opacity-100
+                                        before:bg-[rgba(0,0,0,.1)] before:content-['']  before:h-full before:absolute before:top-0 before:left-0 before:w-full before:hidden before:group-hover:block before:transition-all before:duration-300">
+                                                <img src="./media/img/p7-2-300x383.jpg" alt="" loading="lazy">
+                                            </a>
+                                        </div>
+                                        <div class="absolute top-3 left-3 ">
+                                            <a href="#" class="hidden group-hover:block">
+                                                <i class="fa-regular fa-heart fa-lg text-white "></i>
+                                            </a>
+                                        </div>
+
+                                        <div
+                                            class="product-btn  absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 grid grid-rows-2 gap-2 group-hover:opacity-100 opacity-0 group-hover:top-1/2 group-hover:transition-all group-hover:duration-300 ">
+                                            <div
+                                                class="bg-white hover:text-white hover:bg-black rounded-full py-[10px] px-6 font-poppins flex text-center text-sm">
+                                                <a href="./detailProduct.html" class="whitespace-nowrap">Seclect
+                                                    options</a>
+                                            </div>
+                                            <div
+                                                class="quickShop bg-white hover:text-white hover:bg-black rounded-full py-[10px] px-6 font-poppins flex text-center text-sm justify-center cursor-pointer">
+                                                <button class="cursor-pointer">Quick Shop</button>
+                                            </div>
+                                        </div>
+
+                                    </div>
+
+                                    <div class="product-info mt-[15px] font-poppins text-sm ">
+                                        <h3 class="text-sm hover:text-[#56CFE1] cursor-pointer">Brown Sneaker Shoes</h3>
+                                        <span class="text-[#696969]">$35.00</span>
+                                    </div>
+                                </div>
+                                <!-- 9 -->
+                                <div class="card">
+                                    <div class="product-img relative group">
+                                        <div class="">
+                                            <a href=""
+                                                class="transition-opacity duration-300 ease-in-out group-hover:opacity-0">
+                                                <img src="./media/img/p10-2-300x383.jpg" alt="" loading="lazy">
+                                            </a>
+                                            <a href="../public/detailProduct.html"
+                                                class="absolute inset-0 opacity-0 transition-opacity duration-300 ease-in-out group-hover:opacity-100
+                                        before:bg-[rgba(0,0,0,.1)] before:content-['']  before:h-full before:absolute before:top-0 before:left-0 before:w-full before:hidden before:group-hover:block before:transition-all before:duration-300">
+                                                <img src="./media/img/p9-4-300x383.jpg" alt="" loading="lazy">
+                                            </a>
+                                        </div>
+                                        <div class="absolute top-3 left-3 ">
+                                            <a href="#" class="hidden group-hover:block">
+                                                <i class="fa-regular fa-heart fa-lg text-white "></i>
+                                            </a>
+                                        </div>
+
+                                        <div
+                                            class="product-btn  absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 grid grid-rows-2 gap-2 group-hover:opacity-100 opacity-0 group-hover:top-1/2 group-hover:transition-all group-hover:duration-300 ">
+                                            <div
+                                                class="bg-white hover:text-white hover:bg-black rounded-full py-[10px] px-6 font-poppins flex text-center text-sm">
+                                                <a href="./detailProduct.html" class="whitespace-nowrap">Seclect
+                                                    options</a>
+                                            </div>
+                                            <div
+                                                class="quickShop bg-white hover:text-white hover:bg-black rounded-full py-[10px] px-6 font-poppins flex text-center text-sm justify-center cursor-pointer">
+                                                <button class="cursor-pointer">Quick Shop</button>
+                                            </div>
+                                        </div>
+
+                                    </div>
+
+                                    <div class="product-info mt-[15px] font-poppins text-sm ">
+                                        <h3 class="text-sm hover:text-[#56CFE1] cursor-pointer">Men clothing combo</h3>
+                                        <span class="text-[#696969]">$35.00</span>
+                                    </div>
+                                </div>
+                                <!-- 10 -->
+                                <div class="card">
+                                    <div class="product-img relative group">
+                                        <div class="">
+                                            <a href=""
+                                                class="transition-opacity duration-300 ease-in-out group-hover:opacity-0">
+                                                <img src="./media/img/p4-1-300x383.jpg" alt="" loading="lazy">
+                                            </a>
+                                            <a href="../public/detailProduct.html"
+                                                class="absolute inset-0 opacity-0 transition-opacity duration-300 ease-in-out group-hover:opacity-100
+                                        before:bg-[rgba(0,0,0,.1)] before:content-['']  before:h-full before:absolute before:top-0 before:left-0 before:w-full before:hidden before:group-hover:block before:transition-all before:duration-300">
+                                                <img src="./media/img/p4-3-300x383.jpg" alt="" loading="lazy">
+                                            </a>
+                                        </div>
+                                        <div class="absolute top-3 left-3 ">
+                                            <a href="#" class="hidden group-hover:block">
+                                                <i class="fa-regular fa-heart fa-lg text-white "></i>
+                                            </a>
+                                        </div>
+
+                                        <div
+                                            class="product-btn  absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 grid grid-rows-2 gap-2 group-hover:opacity-100 opacity-0 group-hover:top-1/2 group-hover:transition-all group-hover:duration-300 ">
+                                            <div
+                                                class="bg-white hover:text-white hover:bg-black rounded-full py-[10px] px-6 font-poppins flex text-center text-sm">
+                                                <a href="./detailProduct.html" class="whitespace-nowrap">Seclect
+                                                    options</a>
+                                            </div>
+                                            <div
+                                                class="quickShop bg-white hover:text-white hover:bg-black rounded-full py-[10px] px-6 font-poppins flex text-center text-sm justify-center cursor-pointer">
+                                                <button class="cursor-pointer">Quick Shop</button>
+                                            </div>
+                                        </div>
+
+                                    </div>
+
+                                    <div class="product-info mt-[15px] font-poppins text-sm ">
+                                        <h3 class="text-sm hover:text-[#56CFE1] cursor-pointer">Herschel Retreat
+                                            Backpack
+                                        </h3>
+                                        <span class="text-[#696969]">$35.00</span>
+                                    </div>
+                                </div>
+                                <!-- 11 -->
+                                <div class="card">
+                                    <div class="product-img relative group">
+                                        <div class="">
+                                            <a href=""
+                                                class="transition-opacity duration-300 ease-in-out group-hover:opacity-0">
+                                                <img src="./media/img/p5-4-300x383.jpg" alt="" loading="lazy">
+                                            </a>
+                                            <a href="../public/detailProduct.html"
+                                                class="absolute inset-0 opacity-0 transition-opacity duration-300 ease-in-out group-hover:opacity-100
+                                        before:bg-[rgba(0,0,0,.1)] before:content-['']  before:h-full before:absolute before:top-0 before:left-0 before:w-full before:hidden before:group-hover:block before:transition-all before:duration-300">
+                                                <img src="./media/img/p5-1-300x383.jpg" alt="" loading="lazy">
+                                            </a>
+                                        </div>
+                                        <div class="absolute top-3 left-3 ">
+                                            <a href="#" class="hidden group-hover:block">
+                                                <i class="fa-regular fa-heart fa-lg text-white "></i>
+                                            </a>
+                                        </div>
+
+                                        <div
+                                            class="product-btn  absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 grid grid-rows-2 gap-2 group-hover:opacity-100 opacity-0 group-hover:top-1/2 group-hover:transition-all group-hover:duration-300 ">
+                                            <div
+                                                class="bg-white hover:text-white hover:bg-black rounded-full py-[10px] px-6 font-poppins flex text-center text-sm">
+                                                <a href="./detailProduct.html" class="whitespace-nowrap">Seclect
+                                                    options</a>
+                                            </div>
+                                            <div
+                                                class="quickShop bg-white hover:text-white hover:bg-black rounded-full py-[10px] px-6 font-poppins flex text-center text-sm justify-center cursor-pointer">
+                                                <button class="cursor-pointer">Quick Shop</button>
+                                            </div>
+                                        </div>
+
+                                    </div>
+
+                                    <div class="product-info mt-[15px] font-poppins text-sm ">
+                                        <h3 class="text-sm hover:text-[#56CFE1] cursor-pointer">Skinny Jeans In Black
+                                        </h3>
+                                        <span class="text-[#696969]">$35.00</span>
+                                    </div>
+                                </div>
+                                <!-- 12 -->
+                                <div class="card">
+                                    <div class="product-img relative group">
+                                        <div class="">
+                                            <a href=""
+                                                class="transition-opacity duration-300 ease-in-out group-hover:opacity-0">
+                                                <img src="./media/img/p6-1-300x383.jpg" alt="" loading="lazy">
+                                            </a>
+                                            <a href="../public/detailProduct.html"
+                                                class="absolute inset-0 opacity-0 transition-opacity duration-300 ease-in-out group-hover:opacity-100
+                                        before:bg-[rgba(0,0,0,.1)] before:content-['']  before:h-full before:absolute before:top-0 before:left-0 before:w-full before:hidden before:group-hover:block before:transition-all before:duration-300">
+                                                <img src="./media/img/p6-4-300x383.jpg" alt="" loading="lazy">
+                                            </a>
+                                        </div>
+                                        <div class="absolute top-3 left-3 ">
+                                            <a href="#" class="hidden group-hover:block">
+                                                <i class="fa-regular fa-heart fa-lg text-white "></i>
+                                            </a>
+                                        </div>
+
+                                        <div
+                                            class="product-btn  absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 grid grid-rows-2 gap-2 group-hover:opacity-100 opacity-0 group-hover:top-1/2 group-hover:transition-all group-hover:duration-300 ">
+                                            <div
+                                                class="bg-white hover:text-white hover:bg-black rounded-full py-[10px] px-6 font-poppins flex text-center text-sm">
+                                                <a href="./detailProduct.html" class="whitespace-nowrap">Seclect
+                                                    options</a>
+                                            </div>
+                                            <div
+                                                class="quickShop bg-white hover:text-white hover:bg-black rounded-full py-[10px] px-6 font-poppins flex text-center text-sm justify-center cursor-pointer">
+                                                <button class="cursor-pointer">Quick Shop</button>
+                                            </div>
+                                        </div>
+
+                                    </div>
+
+                                    <div class="product-info mt-[15px] font-poppins text-sm ">
+                                        <h3 class="text-sm hover:text-[#56CFE1] cursor-pointer ">New Look Curved Peak
+                                            Cap
+                                        </h3>
+                                        <span class="text-[#696969]">$35.00</span>
+                                    </div>
+                                </div>
+
+                            </div> <!-- end product1 -->
+                            <div class="Btn Load More flex justify-center mt-[40px] mb-[60px]">
+                                <button
+                                    class="border-[2px] border-[#333] rounded-full px-11 py-3 hover:bg-[#56CFE1] hover:border-[#56CFE1] ">
+                                    <a href="" class="font-poppins text-sm"> Load More</a>
+                                </button>
+                            </div>
+                            <div class="mt-10">
+                                <div class="subheadLine-label uppercase tracking-widest text-black text-2xl font-poppins font-bold
+                                " >
+                                    <h1 class="flex justify-center items-center ">best seller</h1>
+                                    <span class="flex justify-center items-centertext-[14px] text-gray-400 font-LibreBaskerville font-extrabold italic">Top sale in this week</span>
+                                </div>
+                                <div
+                                    class="product1 grid grid-cols-4 gap-8 max-lg:grid-cols-3 max-sm:grid-cols-2 transition-all ease-out duration-500 mt-10 mb-10">
+                                    <!-- 1 -->
+                                    <div class="card">
+                                        <div class="product-img relative group">
+                                            <div class="">
+                                                <a href=""
+                                                    class="transition-opacity duration-300 ease-in-out group-hover:opacity-0">
+                                                    <img src="./media/img/p2-5-300x383.jpg" alt="" loading="lazy">
+                                                </a>
+                                                <a href="../public/detailProduct.html"
+                                                    class="absolute inset-0 opacity-0 transition-opacity duration-300 ease-in-out group-hover:opacity-100
+                                            before:bg-[rgba(0,0,0,.1)] before:content-['']  before:h-full before:absolute before:top-0 before:left-0 before:w-full before:hidden before:group-hover:block before:transition-all before:duration-300">
+                                                    <img src="./media/img/trending-Card-1.jpg" alt="" loading="lazy">
+                                                </a>
+                                            </div>
+                                            <div class="absolute top-3 left-3 ">
+                                                <a href="#" class="hidden group-hover:block">
+                                                    <i class="fa-regular fa-heart fa-lg text-white "></i>
+                                                </a>
+                                            </div>
+                                            <div
+                                                class="product-btn  absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 grid grid-rows-2 gap-2 group-hover:opacity-100 opacity-0 group-hover:top-1/2 group-hover:transition-all group-hover:duration-300 ">
+                                                <div
+                                                    class="bg-white hover:text-white hover:bg-black rounded-full py-[10px] px-6 font-poppins flex text-center text-sm">
+                                                    <a href="./detailProduct.html" class="whitespace-nowrap">Seclect
+                                                        options</a>
+                                                </div>
+                                                <div
+                                                    class="quickShop bg-white hover:text-white hover:bg-black rounded-full py-[10px] px-6 font-poppins flex text-center text-sm justify-center cursor-pointer">
+                                                    <button class="cursor-pointer">Quick Shop</button>
+                                                </div>
+                                            </div>
+
+                                        </div>
+
+                                        <div class="product-info mt-[15px] font-poppins text-sm  ">
+                                            <h3 class="text-sm hover:text-[#56CFE1] cursor-pointer">Cyan Boheme Cyan
+                                            </h3>
+                                            <span class="text-[#696969]">$40.00 – $45.00</span>
+                                            <div class="flex">
+                                                <Bottom
+                                                    class="rounded-full m-1 flex bg-black border-[#333] border-[2px]">
+                                                    <span class="w-4 h-4 bg-[#25bdb0] rounded-full"></span>
+                                                </Bottom>
+                                                <Bottom class="rounded-full m-1 flex  border-[#ddd] border-[2px]">
+                                                    <span class="w-4 h-4 bg-[#fcc6de] rounded-full"></span>
+                                                </Bottom>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- 2 -->
+                                    <div class="card">
+                                        <div class="product-img relative group">
+                                            <div class="">
+                                                <a href=""
+                                                    class="transition-opacity duration-300 ease-in-out group-hover:opacity-0">
+                                                    <img src="./media/img/calvinKlein.jpg" alt="" loading="lazy">
+                                                </a>
+                                                <a href="../public/detailProduct.html"
+                                                    class="absolute inset-0 opacity-0 transition-opacity duration-300 ease-in-out group-hover:opacity-100
+                                            before:bg-[rgba(0,0,0,.1)] before:content-['']  before:h-full before:absolute before:top-0 before:left-0 before:w-full before:hidden before:group-hover:block before:transition-all before:duration-300">
+                                                    <img src="./media/img/calvinKlein2.jpg" alt="" loading="lazy">
+                                                </a>
+                                            </div>
+                                            <div class="absolute top-3 left-3 ">
+                                                <a href="#" class="hidden group-hover:block">
+                                                    <i class="fa-regular fa-heart fa-lg text-white "></i>
+                                                </a>
+                                            </div>
+
+                                            <div
+                                                class="product-btn  absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 grid grid-rows-2 gap-2 group-hover:opacity-100 opacity-0 group-hover:top-1/2 group-hover:transition-all group-hover:duration-300 ">
+                                                <div
+                                                    class="bg-white hover:text-white hover:bg-black rounded-full py-[10px] px-6 font-poppins flex text-center text-sm">
+                                                    <a href="./detailProduct.html" class="whitespace-nowrap">Seclect
+                                                        options</a>
+                                                </div>
+                                                <div
+                                                    class="quickShop bg-white hover:text-white hover:bg-black rounded-full py-[10px] px-6 font-poppins flex text-center text-sm justify-center cursor-pointer">
+                                                    <button class="cursor-pointer ">Quick Shop</button>
+                                                </div>
+                                            </div>
+
+                                        </div>
+
+                                        <div class="product-info mt-[15px] font-poppins text-sm ">
+                                            <h3 class="text-sm hover:text-[#56CFE1] cursor-pointer">Calvin Klein Logo
+                                                Sweatpants
+                                            </h3>
+                                            <span class="text-[#696969]">$35.00</span>
+                                        </div>
+                                    </div>
+                                    <!-- 3 -->
+                                    <div class="card">
+                                        <div class="product-img relative group">
+                                            <div class="">
+                                                <a href=""
+                                                    class="transition-opacity duration-300 ease-in-out group-hover:opacity-0">
+                                                    <img src="./media/img/Bobbi_Chunky_Pom_Beanie2-300x383.jpg" alt=""
+                                                        loading="lazy">
+                                                </a>
+                                                <a href="../public/detailProduct.html"
+                                                    class="absolute inset-0 opacity-0 transition-opacity duration-300 ease-in-out group-hover:opacity-100
+                                            before:bg-[rgba(0,0,0,.1)] before:content-['']  before:h-full before:absolute before:top-0 before:left-0 before:w-full before:hidden before:group-hover:block before:transition-all before:duration-300">
+                                                    <img src="./media/img/Bobbi_Chunky_Pom_Beanie3-300x383.jpg" alt=""
+                                                        loading="lazy">
+                                                </a>
+                                            </div>
+                                            <div class="absolute top-3 left-3 ">
+                                                <a href="#" class="hidden group-hover:block">
+                                                    <i class="fa-regular fa-heart fa-lg text-white "></i>
+                                                </a>
+                                            </div>
+
+                                            <div
+                                                class="product-btn  absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 grid grid-rows-2 gap-2 group-hover:opacity-100 opacity-0 group-hover:top-1/2 group-hover:transition-all group-hover:duration-300 ">
+                                                <div
+                                                    class="bg-white hover:text-white hover:bg-black rounded-full py-[10px] px-6 font-poppins flex text-center text-sm">
+                                                    <a href="./detailProduct.html" class="whitespace-nowrap">Seclect
+                                                        options</a>
+                                                </div>
+                                                <div
+                                                    class="quickShop bg-white hover:text-white hover:bg-black rounded-full py-[10px] px-6 font-poppins flex text-center text-sm justify-center cursor-pointer">
+                                                    <button class="cursor-pointer">Quick Shop</button>
+                                                </div>
+                                            </div>
+
+                                        </div>
+
+                                        <div class="product-info mt-[15px] font-poppins text-sm ">
+                                            <h3 class="text-sm hover:text-[#56CFE1] cursor-pointer">Cuffed Beanie Pink
+                                            </h3>
+                                            <span class="text-[#696969]">$15.00</span>
+                                            <div class="flex">
+                                                <Bottom
+                                                    class="rounded-full m-1 flex bg-black border-[#333] border-[2px]">
+                                                    <span class="w-4 h-4 bg-[#25bdb0] rounded-full"></span>
+                                                </Bottom>
+                                                <Bottom class="rounded-full m-1 flex  border-[#ddd] border-[2px]">
+                                                    <span class="w-4 h-4 bg-[#fcc6de] rounded-full"></span>
+                                                </Bottom>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- 4 -->
+                                    <div class="card">
+                                        <div class="product-img relative group">
+                                            <div class="">
+                                                <a href=""
+                                                    class="transition-opacity duration-300 ease-in-out group-hover:opacity-0">
+                                                    <img src="./media/img/p8-1-300x383.jpg" alt="" loading="lazy">
+                                                </a>
+                                                <a href="../public/detailProduct.html"
+                                                    class="absolute inset-0 opacity-0 transition-opacity duration-300 ease-in-out group-hover:opacity-100
+                                            before:bg-[rgba(0,0,0,.1)] before:content-['']  before:h-full before:absolute before:top-0 before:left-0 before:w-full before:hidden before:group-hover:block before:transition-all before:duration-300">
+                                                    <img src="./media/img/p8-4-300x383.jpg" alt="" loading="lazy">
+                                                </a>
+                                            </div>
+                                            <div class="absolute top-3 left-3 ">
+                                                <a href="#" class="hidden group-hover:block">
+                                                    <i class="fa-regular fa-heart fa-lg text-white "></i>
+                                                </a>
+                                            </div>
+
+                                            <div
+                                                class="product-btn  absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 grid grid-rows-2 gap-2 group-hover:opacity-100 opacity-0 group-hover:top-1/2 group-hover:transition-all group-hover:duration-300 ">
+                                                <div
+                                                    class="bg-white hover:text-white hover:bg-black rounded-full py-[10px] px-6 font-poppins flex text-center text-sm">
+                                                    <a href="./detailProduct.html" class="whitespace-nowrap">Seclect
+                                                        options</a>
+                                                </div>
+                                                <div
+                                                    class="quickShop bg-white hover:text-white hover:bg-black rounded-full py-[10px] px-6 font-poppins flex text-center text-sm justify-center cursor-pointer">
+                                                    <button class="cursor-pointer">Quick Shop</button>
+                                                </div>
+                                            </div>
+
+                                        </div>
+
+                                        <div class="product-info mt-[15px] font-poppins text-sm ">
+                                            <h3 class="text-sm hover:text-[#56CFE1] cursor-pointer">Short Sleeved Hoodie
+                                                With
+                                                Step Hem Grey</h3>
+                                            <span class="text-[#696969]">$35.00</span>
+                                            <div class="flex">
+                                                <Bottom
+                                                    class="rounded-full m-1 flex bg-black border-[#333] border-[2px]">
+                                                    <span class="w-4 h-4 bg-[#25bdb0] rounded-full"></span>
+                                                </Bottom>
+                                                <Bottom class="rounded-full m-1 flex  border-[#ddd] border-[2px]">
+                                                    <span class="w-4 h-4 bg-[#fcc6de] rounded-full"></span>
+                                                </Bottom>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- 5 -->
+                                    <div class="card">
+                                        <div class="product-img relative group">
+                                            <div class="">
+                                                <a href=""
+                                                    class="transition-opacity duration-300 ease-in-out group-hover:opacity-0">
+                                                    <img src="./media/img/Mercury_Tee24-300x383.jpg" alt=""
+                                                        loading="lazy">
+                                                </a>
+                                                <a href="../public/detailProduct.html"
+                                                    class="absolute inset-0 opacity-0 transition-opacity duration-300 ease-in-out group-hover:opacity-100
+                                            before:bg-[rgba(0,0,0,.1)] before:content-['']  before:h-full before:absolute before:top-0 before:left-0 before:w-full before:hidden before:group-hover:block before:transition-all before:duration-300">
+                                                    <img src="./media/img/Mercury_Tee25-300x383.jpg" alt=""
+                                                        loading="lazy">
+                                                </a>
+                                            </div>
+                                            <div class="absolute top-3 left-3 ">
+                                                <a href="#" class="hidden group-hover:block">
+                                                    <i class="fa-regular fa-heart fa-lg text-white "></i>
+                                                </a>
+                                            </div>
+
+                                            <div
+                                                class="product-btn  absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 grid grid-rows-2 gap-2 group-hover:opacity-100 opacity-0 group-hover:top-1/2 group-hover:transition-all group-hover:duration-300 ">
+                                                <div
+                                                    class="bg-white hover:text-white hover:bg-black rounded-full py-[10px] px-6 font-poppins flex text-center text-sm">
+                                                    <a href="./detailProduct.html" class="whitespace-nowrap">Seclect
+                                                        options</a>
+                                                </div>
+                                                <div
+                                                    class="quickShop bg-white hover:text-white hover:bg-black rounded-full py-[10px] px-6 font-poppins flex text-center text-sm justify-center cursor-pointer">
+                                                    <button class="cursor-pointer">Quick Shop</button>
+                                                </div>
+                                            </div>
+
+                                        </div>
+
+                                        <div class="product-info mt-[15px] font-poppins text-sm ">
+                                            <h3 class="text-sm hover:text-[#56CFE1] cursor-pointer">Woleen Tee Blue</h3>
+                                            <span class="text-[#696969]">$68.00</span>
+                                            <div class="flex">
+                                                <Bottom
+                                                    class="rounded-full m-1 flex bg-black border-[#333] border-[2px]">
+                                                    <span class="w-4 h-4 bg-[#25bdb0] rounded-full"></span>
+                                                </Bottom>
+                                                <Bottom class="rounded-full m-1 flex  border-[#ddd] border-[2px]">
+                                                    <span class="w-4 h-4 bg-[#fcc6de] rounded-full"></span>
+                                                </Bottom>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- 6 -->
+                                    <div class="card">
+                                        <div class="product-img relative group">
+                                            <div class="">
+                                                <a href=""
+                                                    class="transition-opacity duration-300 ease-in-out group-hover:opacity-0">
+                                                    <img src="./media/img/Bobbi_Chunky_Pom_Beanie4-300x383.jpg" alt=""
+                                                        loading="lazy">
+                                                </a>
+                                                <a href="../public/detailProduct.html"
+                                                    class="absolute inset-0 opacity-0 transition-opacity duration-300 ease-in-out group-hover:opacity-100
+                                            before:bg-[rgba(0,0,0,.1)] before:content-['']  before:h-full before:absolute before:top-0 before:left-0 before:w-full before:hidden before:group-hover:block before:transition-all before:duration-300">
+                                                    <img src="./media/img/Bobbi_Chunky_Pom_Beanie5-300x383.jpg" alt=""
+                                                        loading="lazy">
+                                                </a>
+                                            </div>
+                                            <div class="absolute top-3 left-3 ">
+                                                <a href="#" class="hidden group-hover:block">
+                                                    <i class="fa-regular fa-heart w-5 h-[22px] text-white "></i>
+                                                </a>
+                                            </div>
+
+                                            <div
+                                                class="product-btn  absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 grid grid-rows-2 gap-2 group-hover:opacity-100 opacity-0 group-hover:top-1/2 group-hover:transition-all group-hover:duration-300 ">
+                                                <div
+                                                    class="bg-white hover:text-white hover:bg-black rounded-full py-[10px] px-6 font-poppins flex text-center text-sm">
+                                                    <a href="./detailProduct.html" class="whitespace-nowrap">Seclect
+                                                        options</a>
+                                                </div>
+                                                <div
+                                                    class="quickShop bg-white hover:text-white hover:bg-black rounded-full py-[10px] px-6 font-poppins flex text-center text-sm justify-center cursor-pointer">
+                                                    <button class="cursor-pointer">Quick Shop</button>
+                                                </div>
+                                            </div>
+
+                                        </div>
+
+                                        <div class="product-info mt-[15px] font-poppins text-sm ">
+                                            <h3 class="text-sm hover:text-[#56CFE1] cursor-pointer">Grey Beanie Grey
+                                            </h3>
+                                            <span class="text-[#696969]">$15.00</span>
+                                            <div class="flex">
+                                                <Bottom
+                                                    class="rounded-full m-1 flex bg-black border-[#333] border-[2px]">
+                                                    <span class="w-4 h-4 bg-[#25bdb0] rounded-full"></span>
+                                                </Bottom>
+                                                <Bottom class="rounded-full m-1 flex  border-[#ddd] border-[2px]">
+                                                    <span class="w-4 h-4 bg-[#fcc6de] rounded-full"></span>
+                                                </Bottom>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- 7 -->
+                                    <div class="card">
+                                        <div class="product-img relative group">
+                                            <div class="">
+                                                <a href=""
+                                                    class="transition-opacity duration-300 ease-in-out group-hover:opacity-0">
+                                                    <img src="./media/img/p2-1-300x383.jpg" alt="" loading="lazy">
+                                                </a>
+                                                <a href="../public/detailProduct.html"
+                                                    class="absolute inset-0 opacity-0 transition-opacity duration-300 ease-in-out group-hover:opacity-100
+                                            before:bg-[rgba(0,0,0,.1)] before:content-['']  before:h-full before:absolute before:top-0 before:left-0 before:w-full before:hidden before:group-hover:block before:transition-all before:duration-300">
+                                                    <img src="./media/img/p2-5-300x383.jpg" alt="" loading="lazy">
+                                                </a>
+                                            </div>
+                                            <div class="absolute top-3 left-3 ">
+                                                <a href="#" class="hidden group-hover:block">
+                                                    <i class="fa-regular fa-heart fa-lg text-white "></i>
+                                                </a>
+                                            </div>
+
+                                            <div
+                                                class="product-btn  absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 grid grid-rows-2 gap-2 group-hover:opacity-100 opacity-0 group-hover:top-1/2 group-hover:transition-all group-hover:duration-300 ">
+                                                <div
+                                                    class="bg-white hover:text-white hover:bg-black rounded-full py-[10px] px-6 font-poppins flex text-center text-sm">
+                                                    <a href="./detailProduct.html" class="whitespace-nowrap">Seclect
+                                                        options</a>
+                                                </div>
+                                                <div
+                                                    class="quickShop bg-white hover:text-white hover:bg-black rounded-full py-[10px] px-6 font-poppins flex text-center text-sm justify-center cursor-pointer">
+                                                    <button class="cursor-pointer">Quick Shop</button>
+                                                </div>
+                                            </div>
+
+                                        </div>
+
+                                        <div class="product-info mt-[15px] font-poppins text-sm ">
+                                            <h3 class="text-sm hover:text-[#56CFE1] cursor-pointer">Pink Leather Watch
+                                            </h3>
+                                            <span class="text-[#696969]">$35.00</span>
+                                        </div>
+                                    </div>
+                                    <!-- 8 -->
+                                    <div class="card">
+                                        <div class="product-img relative group">
+                                            <div class="">
+                                                <a href=""
+                                                    class="transition-opacity duration-300 ease-in-out group-hover:opacity-0">
+                                                    <img src="./media/img/p7-1-300x383.jpg" alt="" loading="lazy">
+                                                </a>
+                                                <a href="../public/detailProduct.html"
+                                                    class="absolute inset-0 opacity-0 transition-opacity duration-300 ease-in-out group-hover:opacity-100
+                                            before:bg-[rgba(0,0,0,.1)] before:content-['']  before:h-full before:absolute before:top-0 before:left-0 before:w-full before:hidden before:group-hover:block before:transition-all before:duration-300">
+                                                    <img src="./media/img/p7-2-300x383.jpg" alt="" loading="lazy">
+                                                </a>
+                                            </div>
+                                            <div class="absolute top-3 left-3 ">
+                                                <a href="#" class="hidden group-hover:block">
+                                                    <i class="fa-regular fa-heart fa-lg text-white "></i>
+                                                </a>
+                                            </div>
+
+                                            <div
+                                                class="product-btn  absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 grid grid-rows-2 gap-2 group-hover:opacity-100 opacity-0 group-hover:top-1/2 group-hover:transition-all group-hover:duration-300 ">
+                                                <div
+                                                    class="bg-white hover:text-white hover:bg-black rounded-full py-[10px] px-6 font-poppins flex text-center text-sm">
+                                                    <a href="./detailProduct.html" class="whitespace-nowrap">Seclect
+                                                        options</a>
+                                                </div>
+                                                <div
+                                                    class="quickShop bg-white hover:text-white hover:bg-black rounded-full py-[10px] px-6 font-poppins flex text-center text-sm justify-center cursor-pointer">
+                                                    <button class="cursor-pointer">Quick Shop</button>
+                                                </div>
+                                            </div>
+
+                                        </div>
+
+                                        <div class="product-info mt-[15px] font-poppins text-sm ">
+                                            <h3 class="text-sm hover:text-[#56CFE1] cursor-pointer">Brown Sneaker Shoes
+                                            </h3>
+                                            <span class="text-[#696969]">$35.00</span>
+                                        </div>
+                                    </div>
+                                   
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+
+                </div>
+            </main>
+            <footer>
+                <div class="footer-top bg-[#f6f6f8] w-full pt-[80px] pb-[80px]">
+                    <div
+                        class="footer-container max-w-[100%] w-[73.125rem] m-auto grid grid-cols-5 max-lg:grid-cols-2 max-lg:px-10 max-sm:grid-cols-1">
+                        <div class="">
+                            <div class=" text-[#878787]">
+                                <p class="pb-8">
+                                    <img src="./media/img/logo.png" alt="" loading="lazy">
+                                </p>
+                                <p class="flex pb-5">
+                                    <i class='bx bx-map text-2xl mr-1'></i>
+                                    <span class="text-sm">184 Main Rd E, St Albans <br>
+                                        <span>VIC 3021, Australia</span>
+                                    </span>
+                                </p>
+                                <p class="flex pb-5">
+                                    <i class='bx bx-envelope text-2xl mr-1'></i>
+                                    <span class="text-sm"> contact@company.com</span>
+                                </p>
+                                <p class="flex pb-5">
+                                    <i class='bx bx-phone text-2xl mr-1'></i>
+                                    <span class="text-sm">+001 2233 456</span>
+                                </p>
+                                <p>
+                                <ul class="flex">
+                                    <li><i class='bx bxl-facebook text-2xl mr-1'></i></li>
+                                    <li><i class='bx bxl-twitter text-2xl mr-1'></i></li>
+                                    <li><i class='bx bxl-google-plus text-2xl mr-1'></i></li>
+                                    <li><i class='bx bxl-instagram text-2xl mr-1'></i></li>
+                                    <li><i class='bx bxl-pinterest text-2xl mr-1'></i></li>
+                                </ul>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="">
+                            <div class=" text-[#878787]">
+                                <p class="text-black pb-8 text-basefont-semibold"> Categories</p>
+                                <p class=" pb-5 text-sm"> Men </p>
+                                <p class=" pb-5 text-sm"> Women </p>
+                                <p class=" pb-5 text-sm"> Accessories </p>
+                                <p class=" pb-5 text-sm">Shoes </p>
+                                <p class=" pb-5 text-sm">Denim</p>
+                                <p class=" pb-5 text-sm">Dress</p>
+                            </div>
+                        </div>
+                        <div class="">
+                            <div class=" text-[#878787] ">
+                                <p class="text-black pb-8 text-basefont-semibold">Infomation</p>
+                                <p class=" pb-5 text-sm">About Us</p>
+                                <p class=" pb-5 text-sm">Contact Us</p>
+                                <p class=" pb-5 text-sm">Terms & Conditions</p>
+                                <p class=" pb-5 text-sm">Returns & Exchanges</p>
+                                <p class=" pb-5 text-sm">Shipping & Delivery</p>
+                                <p class=" pb-5 text-sm">Privacy Policy</p>
+                            </div>
+                        </div>
+                        <div class="">
+                            <div class=" text-[#878787]">
+                                <p class="text-black pb-8 text-basefont-semibold">Quick Links</p>
+                                <p class=" pb-5 text-sm"> Store Location </p>
+                                <p class=" pb-5 text-sm"> My Account </p>
+                                <p class=" pb-5 text-sm"> Orders Tracking </p>
+                                <p class=" pb-5 text-sm">Size Guide </p>
+                                <p class=" pb-5 text-sm">FAQs</p>
+
+                            </div>
+                        </div>
+                        <div class="">
+                            <div class=" text-[#878787]">
+                                <p class="   text-black pb-8 text-basefont-semibold"> Newsletter Signups</p>
+                                <p class=" pb-5 text-sm">Subscribe to our newsletter and get <br> 10% off your first
+                                    purchase </p>
+                                <div class="relative border-[2px] border-slate-800 rounded-full">
+                                    <input type="text" placeholder="Your email address"
+                                        class="border-none w-full p-3 text-[13px] outline-none bg-transparent">
+                                    <input type="submit"
+                                        class="absolute right-[3.5px]  top-1/2 -translate-y-1/2 text-sm border-none text-white bg-[#222] rounded-full  p-2  "
+                                        value="Subscribe">
+                                </div>
+                                </p>
+                                <p class=" pt-5"> <img src="./media/img/payment2.png" alt="" loading="lazy"></p>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer-bottom">
+                    <div
+                        class="flex justify-between w-[73.125rem] m-auto py-2 max-w-[100%] max-md:grid max-md:grid-rows-2 max-md:justify-center sm:text-xs ">
+                        <div
+                            class="text-sm text-[#878787] flex max-md:justify-center max-md:items-center whitespace-nowrap max-sm:grid max-sm:grid-rows-2 max-sm:pb-3">
+                            <span> Copyright © 2016 <span class="text-[#56cfe1]">Claue</span> all rights
+                                reserved.</span>
+                            <span class=" max-sm:justify-center max-sm:flex">Powered by <a href="#">JanStudio</a></span>
+                        </div>
+                        <div class="">
+                            <ul
+                                class="flex text-sm text-[#878787] max-md:justify-center max-md:items-center whitespace-nowrap">
+                                <li class="mr-5">Shop</li>
+                                <li class="mr-5">About Us</li>
+                                <li class="mr-5">Contact</li>
+                                <li class="mr-5">Blog</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                </div>
+            </footer>
+        </div>
+    </div>
+    <script src="./js/main.js"></script>
+</body>
+
+</html>
