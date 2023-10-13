@@ -207,33 +207,62 @@ if (close_detail) {
 // 
 /**Slideshow CTSP */
 // Đặt biến slideIndex để theo dõi slide hiện tại
-let slideIndex2 = 1;
-
 // Hàm hiển thị slide
-// function showSlides(n) {
-//     const slides = document.querySelectorAll(".slideshow-image");
-    
-//     if (n > slides.length) {
-//         slideIndex2 = 1;
-//     }
-//     if (n < 1) {
-//         slideIndex2 = slides.length;
-//     }
-    
-//     for (let i = 0; i < slides.length; i++) {
-//         slides[i].style.display = "none";
-//     }
+let slideIndex2 = 1;
+let startX = null;
 
-//     // Kiểm tra slideIndex2 có nằm trong phạm vi hợp lệ
-//     if (slideIndex2 > slides.length) {
-//         slideIndex2 = 1;
-//     } else if (slideIndex2 < 1) {
-//         slideIndex2 = slides.length;
-//     }
-//     if (slides.length > 0) {
-//         slides[slideIndex2 - 1].style.display = "block";
-//     }
-// }
+function showSlides2(n) {
+  const slides = document.querySelectorAll(".slideshow-image");
+
+  if (n > slides.length) {
+    slideIndex2 = 1;
+  }
+  if (n < 1) {
+    slideIndex2 = slides.length;
+  }
+
+  for (let i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
+  }
+
+  if (slides.length > 0) {
+    slides[slideIndex2 - 1].style.display = "block";
+  }
+}
+
+function prevSlide2() {
+  showSlides2(slideIndex2 -= 1);
+}
+
+function nextSlide2() {
+  showSlides2(slideIndex2 += 1);
+}
+
+function touchStart(event) {
+  startX = event.touches[0].clientX;
+}
+
+function touchEnd(event) {
+  if (startX === null) {
+    return;
+  }
+
+  const endX = event.changedTouches[0].clientX;
+  const deltaX = startX - endX;
+
+  if (deltaX > 50) {
+    nextSlide2();
+  } else if (deltaX < -50) {
+    prevSlide2();
+  }
+
+  startX = null;
+}
+
+// document.querySelector(".slideshow-container").addEventListener("touchstart", touchStart);
+// document.querySelector(".slideshow-container").addEventListener("touchend", touchEnd);
+
+showSlides2(slideIndex2);
 
 // Hàm để chuyển đến slide trước
 function prevSlide() {
