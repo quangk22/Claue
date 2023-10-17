@@ -2629,8 +2629,16 @@ video {
 }
 
 @media not all and (min-width: 768px){
+  .max-md\:float-none{
+    float: none;
+  }
+
   .max-md\:mt-7{
     margin-top: 1.75rem;
+  }
+
+  .max-md\:mt-5{
+    margin-top: 1.25rem;
   }
 
   .max-md\:block{
@@ -2695,6 +2703,11 @@ video {
 
   .max-md\:overflow-hidden{
     overflow: hidden;
+  }
+
+  .max-md\:py-5{
+    padding-top: 1.25rem;
+    padding-bottom: 1.25rem;
   }
 
   .max-md\:pl-0{
