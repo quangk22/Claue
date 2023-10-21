@@ -1,15 +1,19 @@
 
 let products = null;
+let listProduct = document.getElementById('product1');
+let listProduct2 = document.getElementById('bestSeller');
 fetch('../public/js/Product.json')
     .then(response => response.json())
     .then(data => {
-        products = data;
+        products = data.slice(0, 8);
         console.log(products);
-        addDataToHTML();
+        addDataToHTML('product1', products);
+        addDataToHTML('bestSeller', products);
     })
-let listProduct = document.querySelector('.product1');
-function addDataToHTML() {
-    products.forEach(products => {
+function addDataToHTML(containerId , data) {
+    const container = document.getElementById(containerId);
+    container.innerHTML = '';
+    data.forEach(products => {
         let newProduct = document.createElement('a');
         newProduct.href = '../public/detailProduct.html?id=' + products.id;
         newProduct.classList.add('item');
@@ -24,11 +28,11 @@ function addDataToHTML() {
                         <img src="${products.img2}" alt="" loading="lazy">
                      </a>
                 </div>
-                <div class="absolute top-3 left-3 ">
-                    <a href="#" class="hidden group-hover:block">
-                         <div class="block">
-                            <div class=""><i class="fa-regular fa-heart fa-lg text-white "></i></div>
-                            <div class="quickShop"><i class="fa-solid fa-eye fa-lg text-white"></i></div></div>
+                <div class="absolute top-3 left-3 max-lg:block ">
+                    <a href="#" class="hidden group-hover:block max-lg:block">
+                         <div class="block max-lg:block">
+                            <div class="max-lg:block"><i class="fa-regular fa-heart fa-lg text-white "></i></div>
+                            <div class="quickShop lg:hidden  max-md:block "><i class="fa-solid fa-eye fa-lg text-white"></i></div></div>
                      </a>
                 </div>
                    <div class="product-btn  absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 grid grid-rows-2 gap-2 group-hover:opacity-100 opacity-0 group-hover:top-1/2 group-hover:transition-all group-hover:duration-300 max-lg:hidden">
@@ -58,7 +62,11 @@ function addDataToHTML() {
                                 </div>
                             </div>
         `;
-        listProduct.appendChild(newProduct);
+        if (containerId === 'product1') {
+            listProduct.appendChild(newProduct);
+        } else if (containerId === 'bestSeller') {
+            listProduct2.appendChild(newProduct);
+        }
     })
 }
 //------------------------------------------------------
