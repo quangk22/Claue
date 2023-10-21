@@ -1143,6 +1143,14 @@ video {
   height: 100%;
 }
 
+.h-\[200\]{
+  height: 200;
+}
+
+.h-\[200px\]{
+  height: 200px;
+}
+
 .min-h-\[400px\]{
   min-height: 400px;
 }
@@ -1246,6 +1254,10 @@ video {
 .w-max{
   width: -moz-max-content;
   width: max-content;
+}
+
+.w-\[\]{
+  width: ;
 }
 
 .min-w-\[150px\]{
