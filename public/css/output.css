@@ -915,10 +915,6 @@ video {
   margin-bottom: 10px;
 }
 
-.mb-\[50px\]{
-  margin-bottom: 50px;
-}
-
 .mb-\[51px\]{
   margin-bottom: 51px;
 }
@@ -2827,10 +2823,6 @@ video {
   .max-sm\:text-\[10px\]{
     font-size: 10px;
   }
-
-  .max-sm\:text-\[7px\]{
-    font-size: 7px;
-  }
 }
 
 @media (min-width: 640px){
@@ -2948,10 +2940,6 @@ video {
 
   .lg\:mt-\[15px\]{
     margin-top: 15px;
-  }
-
-  .lg\:block{
-    display: block;
   }
 
   .lg\:flex{
